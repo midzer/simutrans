@@ -5,7 +5,7 @@
 
 # Define variables here to force them as simple flavor. -> Faster parallel builds.
 FLAGS :=
-CFLAGS ?=
+CFLAGS ?= -sUSE_SDL=2 -sUSE_BZIP2 -sUSE_LIBPNG -sUSE_FREETYPE=1 -sUSE_SDL_MIXER=2
 LDFLAGS ?=
 LIBS :=
 SOURCES :=

@@ -8,7 +8,7 @@
 #BACKEND := gdi
 #BACKEND := sdl2
 #BACKEND := posix
-BACKEND = @backend@
+BACKEND = mixer_sdl2
 
 #OSTYPE := amiga
 #OSTYPE := beos
@@ -34,23 +34,23 @@ WITH_REVISION := @svn@ # adds the revision from svn; required for networkgames
 
 #WIN32_CONSOLE := 1 # adds a console for windows debugging
 
-MULTI_THREAD := @multithread@ # Enable multithreading, highly recommended
+MULTI_THREAD := 0 # Enable multithreading, highly recommended
 BUNDLE_PTHREADGC2 := @bundlepthread@
 
 # using UPnP for easy server hosting behind routers
 USE_UPNP := @upnp@
 
 # using fontconfig for linux/mac TTF selection
-USE_FONTCONFIG := @fontconfig@
+USE_FONTCONFIG := 0
 
 # using zstd compression
 USE_ZSTD := @zstd@
 
 # using FluidSynth for MIDI playback (SDL2 backend needed for Linux/MacOS, SDL2 or GDI for MinGW)
-USE_FLUIDSYNTH_MIDI := @fluidsynth@
+USE_FLUIDSYNTH_MIDI := 0
 
 # enable link time optimizations
-#LTO := 1
+LTO := 1
 
 # Define these as empty strings, if you don't have the respective config program
 #ALLEGRO_CONFIG :=

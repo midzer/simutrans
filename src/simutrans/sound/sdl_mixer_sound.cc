@@ -45,7 +45,10 @@ bool dr_init_sound()
 		int freq = 22050;
 		int channels = 1;
 		unsigned short int format = AUDIO_S16SYS;
-		int samples = 1024;
+		int samples = 2048;
+
+		Mix_Init(MIX_INIT_MID);
+    	Mix_SetTimidityCfg("timidity.cfg");
 
 		if (Mix_OpenAudio(freq, format, channels, samples) != -1) {
 			Mix_QuerySpec(&freq, &format,  &channels);

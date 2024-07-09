@@ -345,8 +345,8 @@ resolution dr_query_screen_resolution()
 	SDL_DisplayMode mode;
 	SDL_GetCurrentDisplayMode( 0, &mode );
 	DBG_MESSAGE("dr_query_screen_resolution(SDL2)", "screen resolution width=%d, height=%d", mode.w, mode.h );
-	res.w = SCREEN_TO_TEX_X(mode.w);
-	res.h = SCREEN_TO_TEX_Y(mode.h);
+	res.w = 704;//SCREEN_TO_TEX_X(mode.w);
+	res.h = 560;//SCREEN_TO_TEX_Y(mode.h);
 	return res;
 }
 
@@ -446,7 +446,7 @@ int dr_os_open(const scr_size window_size, sint16 fs)
 	const int tex_pitch = (tex_w + 15) & 0x7FF0;
 
 	// SDL2 only works with borderless fullscreen (SDL_WINDOW_FULLSCREEN_DESKTOP)
-	Uint32 flags = fullscreen ? SDL_WINDOW_FULLSCREEN_DESKTOP : SDL_WINDOW_RESIZABLE;
+	Uint32 flags = fullscreen ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0;
 	flags |= SDL_WINDOW_ALLOW_HIGHDPI; // apparently needed for Apple retina displays
 #ifdef __ANDROID__
 	// needed for landscape apparently
